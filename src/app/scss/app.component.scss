@@ -1,0 +1,169 @@
+@import 'config';
+
+.outer-frame {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: -5rem;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.inner-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+header {
+    h1 {
+        text-align: center;
+        font-weight: map-get($font-weights, bold);
+        color: white;
+    }
+
+    p {
+        text-align: center;
+        font-weight: map-get($font-weights, regular);
+        color: white;
+        font-size: 0.9rem;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .trial-btn {
+        background-color: $accent-blue;
+        border: none;
+        color: white;
+        padding: 1rem 4rem;
+        font-size: 0.8rem;
+        box-shadow: 0 0.4rem rgba(0, 0, 0, 0.2);
+
+        span {
+            font-weight: map-get($font-weights, semi-bold);
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0.4rem rgba(0, 0, 0, 0.2);
+
+
+        input {
+            padding: 0.5rem;
+            border-radius: 5px;
+
+            &::placeholder {
+                font-weight: map-get($font-weights, semi-bold);
+                font-size: 0.8rem;
+                color: $neutral-dark-blue;
+                opacity: 0.8;
+            }
+        }
+
+        .entry{
+            position: relative;
+
+        }
+        .error-icon{
+            position: absolute;
+            right:0.5rem;
+            top:0.5rem;
+        }
+
+        p {
+            padding: 0 1rem;
+            text-align: center;
+            font-size: 0.7rem;
+            color: $neutral-grayish-blue;
+
+            span {
+                color: $primary-red;
+                font-weight: map-get($font-weights, semi-bold);
+            }
+        }
+
+    }
+
+    .submit-btn {
+        width: 100%;
+        background-color: $primary-green;
+        border: none;
+        color: white;
+        padding: 1rem 2rem;
+        font-size: 0.8rem;
+        font-weight: map-get($font-weights, medium);
+        box-shadow: inset 0px -3px 5px rgba(0, 0, 0, 0.2);
+
+    }
+}
+
+.error {
+    border: 2px solid $primary-red;
+}
+.success {
+    border: 2px solid $primary-green;
+}
+
+.errorMsg {
+    display: block;
+    color: $primary-red !important;
+    text-align: end !important;
+    padding: 0 !important;
+    margin: 0;
+    font-style: italic;
+    font-weight: map-get($font-weights, medium);
+}
+
+
+.attribution {
+    font-size: 0.7rem;
+    text-align: center;
+
+    a {
+        color: white
+    }
+}
+
+@media screen and (min-width:551px) {
+    header {
+        flex-basis: 40%;
+        padding: 3rem 3rem 3rem 0;
+
+        h1,
+        p {
+            text-align: start;
+        }
+
+        p {
+            font-size: 0.7rem;
+        }
+    }
+
+    .outer-frame {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
