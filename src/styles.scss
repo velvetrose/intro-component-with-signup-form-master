@@ -1,11 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import './app/scss/config';
-
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     padding: 2rem 1rem;
     background-color: $primary-red;
     font-family: $font-family;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
